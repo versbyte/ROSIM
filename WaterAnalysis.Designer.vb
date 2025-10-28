@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class WaterAnalysis
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -44,7 +44,7 @@ Partial Class Form1
         Me.txtSDI = New System.Windows.Forms.TextBox()
         Me.txtpH = New System.Windows.Forms.TextBox()
         Me.txtTDSm = New System.Windows.Forms.TextBox()
-        Me.btnVerify = New System.Windows.Forms.Button()
+        Me.btnEvaluate = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtHCO3 = New System.Windows.Forms.TextBox()
@@ -78,6 +78,7 @@ Partial Class Form1
         Me.lblTDSc = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.btnNext = New System.Windows.Forms.Button()
         Me.gbData.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -283,17 +284,17 @@ Partial Class Form1
         Me.txtTDSm.Size = New System.Drawing.Size(140, 26)
         Me.txtTDSm.TabIndex = 3
         '
-        'btnVerify
+        'btnEvaluate
         '
-        Me.btnVerify.BackColor = System.Drawing.SystemColors.Highlight
-        Me.btnVerify.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnVerify.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnVerify.Location = New System.Drawing.Point(29, 413)
-        Me.btnVerify.Name = "btnVerify"
-        Me.btnVerify.Size = New System.Drawing.Size(102, 38)
-        Me.btnVerify.TabIndex = 7
-        Me.btnVerify.Text = "Verify"
-        Me.btnVerify.UseVisualStyleBackColor = False
+        Me.btnEvaluate.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btnEvaluate.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEvaluate.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnEvaluate.Location = New System.Drawing.Point(29, 414)
+        Me.btnEvaluate.Name = "btnEvaluate"
+        Me.btnEvaluate.Size = New System.Drawing.Size(102, 38)
+        Me.btnEvaluate.TabIndex = 7
+        Me.btnEvaluate.Text = "Evaluate"
+        Me.btnEvaluate.UseVisualStyleBackColor = False
         '
         'GroupBox1
         '
@@ -633,18 +634,37 @@ Partial Class Form1
         Me.ImageList1.ImageSize = New System.Drawing.Size(16, 16)
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         '
-        'Form1
+        'btnNext
+        '
+        Me.btnNext.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btnNext.Enabled = False
+        Me.btnNext.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNext.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnNext.Location = New System.Drawing.Point(137, 414)
+        Me.btnNext.Name = "btnNext"
+        Me.btnNext.Size = New System.Drawing.Size(102, 38)
+        Me.btnNext.TabIndex = 30
+        Me.btnNext.Text = "Next"
+        Me.btnNext.UseVisualStyleBackColor = False
+        '
+        'WaterAnalysis
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1264, 491)
+        Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.btnVerify)
+        Me.Controls.Add(Me.btnEvaluate)
         Me.Controls.Add(Me.gbData)
-        Me.Name = "Form1"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(1286, 547)
+        Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(1286, 547)
+        Me.Name = "WaterAnalysis"
         Me.Text = "Water Analysis"
         Me.gbData.ResumeLayout(False)
         Me.gbData.PerformLayout()
@@ -668,7 +688,7 @@ Partial Class Form1
     Friend WithEvents txtSDI As TextBox
     Friend WithEvents txtpH As TextBox
     Friend WithEvents lblunit2 As Label
-    Friend WithEvents btnVerify As Button
+    Friend WithEvents btnEvaluate As Button
     Friend WithEvents lblunit8 As Label
     Friend WithEvents txtTemperature As TextBox
     Friend WithEvents lblTemperature As Label
@@ -713,4 +733,5 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents ImageList1 As ImageList
     Friend WithEvents txtCa As TextBox
+    Friend WithEvents btnNext As Button
 End Class

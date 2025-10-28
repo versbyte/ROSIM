@@ -1,7 +1,9 @@
 ﻿Imports System.Diagnostics.Contracts
+Imports System.Drawing.Text
+Imports System.Security.Cryptography.X509Certificates
 
-Public Class Form1
-    Private Sub btnApply_Click(sender As Object, e As EventArgs) Handles btnVerify.Click
+Public Class WaterAnalysis
+    Private Sub btnApply_Click(sender As Object, e As EventArgs) Handles btnEvaluate.Click
 
         '------Variables------
 
@@ -90,7 +92,7 @@ Public Class Form1
                                     / (dTotalCations_eq + dTotalAnions_eq)) * 100
 
 
-        txtIonicBalaceError.Text = Convert.ToString(Math.Round(dIBE, 2))
+        txtIonicBalaceError.Text = ConvAndRound(dIBE)
 
         'TDSc calculation
 
@@ -98,20 +100,31 @@ Public Class Form1
             dTDSc += LCmgl(i)
         Next
 
-        txtTDSc.Text = Convert.ToString(Math.Round(dTDSc, 2))
+        txtTDSc.Text = ConvAndRound(dTDSc)
 
         'Hardness calculation
         dHardness = dCa * 2.497 + dMg * 4.118
-        txtHardness.Text = Convert.ToString(Math.Round(dHardness, 2))
+        txtHardness.Text = ConvAndRound(dHardness)
 
         'Alkalinity calculation
         dAlkalinity = (dHCO3 / 61.016) * 50 + (dCO3 / 60.008) * 50
-        txtAlkalinity.Text = Convert.ToString(Math.Round(dAlkalinity, 2))
+        txtAlkalinity.Text = ConvAndRound(dAlkalinity)
 
         'Osmotic Pressure calculation
         dOsmoticPressure = 1.12 * dTDSc * (273.15 + dTemperature) * 0.00001
-        txtOsmoticPressure.Text = Convert.ToString(Math.Round(dOsmoticPressure, 2))
+        txtOsmoticPressure.Text = ConvAndRound(dOsmoticPressure)
+
+        btnNext.Enabled = True
+
     End Sub
 
+    Private Function ConvAndRound(variable As Double) As String
+        Return Convert.ToString(Math.Round(variable, 2))
+    End Function
 
+    Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
+
+        System_Configuration_Design.Show()
+        Me.Hide()
+    End Sub
 End Class
