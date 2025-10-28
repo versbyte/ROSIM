@@ -22,11 +22,20 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.gbData = New System.Windows.Forms.GroupBox()
+        Me.txtCa = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.lblunit6 = New System.Windows.Forms.Label()
+        Me.lblunit7 = New System.Windows.Forms.Label()
         Me.txtNa = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtMg = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtK = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.lblunit8 = New System.Windows.Forms.Label()
         Me.txtTemperature = New System.Windows.Forms.TextBox()
         Me.lblTemperature = New System.Windows.Forms.Label()
@@ -36,14 +45,6 @@ Partial Class Form1
         Me.txtpH = New System.Windows.Forms.TextBox()
         Me.txtTDSm = New System.Windows.Forms.TextBox()
         Me.btnVerify = New System.Windows.Forms.Button()
-        Me.txtK = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.TextCa = New System.Windows.Forms.TextBox()
-        Me.lblunit7 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.lblunit6 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtHCO3 = New System.Windows.Forms.TextBox()
@@ -58,24 +59,25 @@ Partial Class Form1
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.lblTDSc = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.txtIonicBalaceError = New System.Windows.Forms.TextBox()
-        Me.txtTDSc = New System.Windows.Forms.TextBox()
-        Me.txtHardness = New System.Windows.Forms.TextBox()
-        Me.txtAlkalinity = New System.Windows.Forms.TextBox()
-        Me.txtOsmoticPressure = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtOsmoticPressure = New System.Windows.Forms.TextBox()
+        Me.txtAlkalinity = New System.Windows.Forms.TextBox()
+        Me.txtHardness = New System.Windows.Forms.TextBox()
+        Me.txtTDSc = New System.Windows.Forms.TextBox()
+        Me.txtIonicBalaceError = New System.Windows.Forms.TextBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.lblTDSc = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.gbData.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -84,8 +86,8 @@ Partial Class Form1
         '
         'gbData
         '
+        Me.gbData.Controls.Add(Me.txtCa)
         Me.gbData.Controls.Add(Me.Label14)
-        Me.gbData.Controls.Add(Me.TextCa)
         Me.gbData.Controls.Add(Me.Label13)
         Me.gbData.Controls.Add(Me.lblunit6)
         Me.gbData.Controls.Add(Me.lblunit7)
@@ -102,6 +104,53 @@ Partial Class Form1
         Me.gbData.TabIndex = 0
         Me.gbData.TabStop = False
         Me.gbData.Text = "Cations"
+        '
+        'txtCa
+        '
+        Me.txtCa.Location = New System.Drawing.Point(104, 136)
+        Me.txtCa.Name = "txtCa"
+        Me.txtCa.Size = New System.Drawing.Size(140, 26)
+        Me.txtCa.TabIndex = 27
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label14.Location = New System.Drawing.Point(250, 138)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(38, 20)
+        Me.Label14.TabIndex = 26
+        Me.Label14.Text = "mg/l"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(24, 139)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(31, 20)
+        Me.Label13.TabIndex = 25
+        Me.Label13.Text = "Ca"
+        '
+        'lblunit6
+        '
+        Me.lblunit6.AutoSize = True
+        Me.lblunit6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.lblunit6.Location = New System.Drawing.Point(250, 92)
+        Me.lblunit6.Name = "lblunit6"
+        Me.lblunit6.Size = New System.Drawing.Size(38, 20)
+        Me.lblunit6.TabIndex = 14
+        Me.lblunit6.Text = "mg/l"
+        '
+        'lblunit7
+        '
+        Me.lblunit7.AutoSize = True
+        Me.lblunit7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.lblunit7.Location = New System.Drawing.Point(250, 49)
+        Me.lblunit7.Name = "lblunit7"
+        Me.lblunit7.Size = New System.Drawing.Size(38, 20)
+        Me.lblunit7.TabIndex = 13
+        Me.lblunit7.Text = "mg/l"
         '
         'txtNa
         '
@@ -136,6 +185,33 @@ Partial Class Form1
         Me.Label4.Size = New System.Drawing.Size(33, 20)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Mg"
+        '
+        'txtK
+        '
+        Me.txtK.Location = New System.Drawing.Point(104, 181)
+        Me.txtK.Name = "txtK"
+        Me.txtK.Size = New System.Drawing.Size(140, 26)
+        Me.txtK.TabIndex = 7
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(24, 184)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(20, 20)
+        Me.Label6.TabIndex = 16
+        Me.Label6.Text = "K"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label5.Location = New System.Drawing.Point(250, 184)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(38, 20)
+        Me.Label5.TabIndex = 17
+        Me.Label5.Text = "mg/l"
         '
         'lblunit8
         '
@@ -212,86 +288,12 @@ Partial Class Form1
         Me.btnVerify.BackColor = System.Drawing.SystemColors.Highlight
         Me.btnVerify.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnVerify.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnVerify.Location = New System.Drawing.Point(137, 798)
+        Me.btnVerify.Location = New System.Drawing.Point(29, 413)
         Me.btnVerify.Name = "btnVerify"
         Me.btnVerify.Size = New System.Drawing.Size(102, 38)
         Me.btnVerify.TabIndex = 7
         Me.btnVerify.Text = "Verify"
         Me.btnVerify.UseVisualStyleBackColor = False
-        '
-        'txtK
-        '
-        Me.txtK.Location = New System.Drawing.Point(104, 181)
-        Me.txtK.Name = "txtK"
-        Me.txtK.Size = New System.Drawing.Size(140, 26)
-        Me.txtK.TabIndex = 7
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(24, 184)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(20, 20)
-        Me.Label6.TabIndex = 16
-        Me.Label6.Text = "K"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(24, 139)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(31, 20)
-        Me.Label13.TabIndex = 25
-        Me.Label13.Text = "Ca"
-        '
-        'TextCa
-        '
-        Me.TextCa.Location = New System.Drawing.Point(104, 136)
-        Me.TextCa.Name = "TextCa"
-        Me.TextCa.Size = New System.Drawing.Size(140, 26)
-        Me.TextCa.TabIndex = 6
-        '
-        'lblunit7
-        '
-        Me.lblunit7.AutoSize = True
-        Me.lblunit7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblunit7.Location = New System.Drawing.Point(250, 49)
-        Me.lblunit7.Name = "lblunit7"
-        Me.lblunit7.Size = New System.Drawing.Size(38, 20)
-        Me.lblunit7.TabIndex = 13
-        Me.lblunit7.Text = "mg/l"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label5.Location = New System.Drawing.Point(250, 184)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(38, 20)
-        Me.Label5.TabIndex = 17
-        Me.Label5.Text = "mg/l"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label14.Location = New System.Drawing.Point(250, 138)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(38, 20)
-        Me.Label14.TabIndex = 26
-        Me.Label14.Text = "mg/l"
-        '
-        'lblunit6
-        '
-        Me.lblunit6.AutoSize = True
-        Me.lblunit6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblunit6.Location = New System.Drawing.Point(250, 92)
-        Me.lblunit6.Name = "lblunit6"
-        Me.lblunit6.Size = New System.Drawing.Size(38, 20)
-        Me.lblunit6.TabIndex = 14
-        Me.lblunit6.Text = "mg/l"
         '
         'GroupBox1
         '
@@ -441,16 +443,6 @@ Partial Class Form1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Physical Properties"
         '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(314, 38)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(78, 20)
-        Me.Label17.TabIndex = 20
-        Me.Label17.Text = "Feed pH"
-        '
         'Label18
         '
         Me.Label18.AutoSize = True
@@ -460,6 +452,16 @@ Partial Class Form1
         Me.Label18.Size = New System.Drawing.Size(105, 20)
         Me.Label18.TabIndex = 21
         Me.Label18.Text = "SDI (15min)"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(314, 38)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(78, 20)
+        Me.Label17.TabIndex = 20
+        Me.Label17.Text = "Feed pH"
         '
         'GroupBox3
         '
@@ -485,120 +487,15 @@ Partial Class Form1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Calculations"
         '
-        'Label2
+        'Label25
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(16, 32)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(163, 20)
-        Me.Label2.TabIndex = 22
-        Me.Label2.Text = "Ionic Balance Error"
-        '
-        'lblTDSc
-        '
-        Me.lblTDSc.AutoSize = True
-        Me.lblTDSc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTDSc.Location = New System.Drawing.Point(16, 70)
-        Me.lblTDSc.Name = "lblTDSc"
-        Me.lblTDSc.Size = New System.Drawing.Size(88, 20)
-        Me.lblTDSc.TabIndex = 23
-        Me.lblTDSc.Text = "TDS(calc)"
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(16, 108)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(86, 20)
-        Me.Label20.TabIndex = 24
-        Me.Label20.Text = "Hardness"
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(16, 146)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(80, 20)
-        Me.Label21.TabIndex = 25
-        Me.Label21.Text = "Alkalinity"
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(16, 184)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(150, 20)
-        Me.Label22.TabIndex = 26
-        Me.Label22.Text = "Osmotic Pressure"
-        '
-        'txtIonicBalaceError
-        '
-        Me.txtIonicBalaceError.Location = New System.Drawing.Point(202, 29)
-        Me.txtIonicBalaceError.Name = "txtIonicBalaceError"
-        Me.txtIonicBalaceError.Size = New System.Drawing.Size(140, 26)
-        Me.txtIonicBalaceError.TabIndex = 12
-        '
-        'txtTDSc
-        '
-        Me.txtTDSc.Location = New System.Drawing.Point(202, 67)
-        Me.txtTDSc.Name = "txtTDSc"
-        Me.txtTDSc.Size = New System.Drawing.Size(140, 26)
-        Me.txtTDSc.TabIndex = 13
-        '
-        'txtHardness
-        '
-        Me.txtHardness.Location = New System.Drawing.Point(202, 105)
-        Me.txtHardness.Name = "txtHardness"
-        Me.txtHardness.Size = New System.Drawing.Size(140, 26)
-        Me.txtHardness.TabIndex = 14
-        '
-        'txtAlkalinity
-        '
-        Me.txtAlkalinity.Location = New System.Drawing.Point(202, 143)
-        Me.txtAlkalinity.Name = "txtAlkalinity"
-        Me.txtAlkalinity.Size = New System.Drawing.Size(140, 26)
-        Me.txtAlkalinity.TabIndex = 15
-        '
-        'txtOsmoticPressure
-        '
-        Me.txtOsmoticPressure.Location = New System.Drawing.Point(202, 181)
-        Me.txtOsmoticPressure.Name = "txtOsmoticPressure"
-        Me.txtOsmoticPressure.Size = New System.Drawing.Size(140, 26)
-        Me.txtOsmoticPressure.TabIndex = 16
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label1.Location = New System.Drawing.Point(348, 35)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(33, 20)
-        Me.Label1.TabIndex = 27
-        Me.Label1.Text = "(%)"
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label19.Location = New System.Drawing.Point(348, 70)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(38, 20)
-        Me.Label19.TabIndex = 28
-        Me.Label19.Text = "mg/l"
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label23.Location = New System.Drawing.Point(348, 108)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(94, 20)
-        Me.Label23.TabIndex = 29
-        Me.Label23.Text = "mg/l CaCO3"
+        Me.Label25.AutoSize = True
+        Me.Label25.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label25.Location = New System.Drawing.Point(348, 184)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(32, 20)
+        Me.Label25.TabIndex = 31
+        Me.Label25.Text = "bar"
         '
         'Label24
         '
@@ -610,22 +507,138 @@ Partial Class Form1
         Me.Label24.TabIndex = 30
         Me.Label24.Text = "mg/l CaCO3"
         '
-        'Label25
+        'Label23
         '
-        Me.Label25.AutoSize = True
-        Me.Label25.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label25.Location = New System.Drawing.Point(348, 184)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(32, 20)
-        Me.Label25.TabIndex = 31
-        Me.Label25.Text = "bar"
+        Me.Label23.AutoSize = True
+        Me.Label23.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label23.Location = New System.Drawing.Point(348, 108)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(94, 20)
+        Me.Label23.TabIndex = 29
+        Me.Label23.Text = "mg/l CaCO3"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label19.Location = New System.Drawing.Point(348, 70)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(38, 20)
+        Me.Label19.TabIndex = 28
+        Me.Label19.Text = "mg/l"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label1.Location = New System.Drawing.Point(348, 35)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(33, 20)
+        Me.Label1.TabIndex = 27
+        Me.Label1.Text = "(%)"
+        '
+        'txtOsmoticPressure
+        '
+        Me.txtOsmoticPressure.Location = New System.Drawing.Point(202, 181)
+        Me.txtOsmoticPressure.Name = "txtOsmoticPressure"
+        Me.txtOsmoticPressure.ReadOnly = True
+        Me.txtOsmoticPressure.Size = New System.Drawing.Size(140, 26)
+        Me.txtOsmoticPressure.TabIndex = 16
+        '
+        'txtAlkalinity
+        '
+        Me.txtAlkalinity.Location = New System.Drawing.Point(202, 143)
+        Me.txtAlkalinity.Name = "txtAlkalinity"
+        Me.txtAlkalinity.ReadOnly = True
+        Me.txtAlkalinity.Size = New System.Drawing.Size(140, 26)
+        Me.txtAlkalinity.TabIndex = 15
+        '
+        'txtHardness
+        '
+        Me.txtHardness.Location = New System.Drawing.Point(202, 105)
+        Me.txtHardness.Name = "txtHardness"
+        Me.txtHardness.ReadOnly = True
+        Me.txtHardness.Size = New System.Drawing.Size(140, 26)
+        Me.txtHardness.TabIndex = 14
+        '
+        'txtTDSc
+        '
+        Me.txtTDSc.Location = New System.Drawing.Point(202, 67)
+        Me.txtTDSc.Name = "txtTDSc"
+        Me.txtTDSc.ReadOnly = True
+        Me.txtTDSc.Size = New System.Drawing.Size(140, 26)
+        Me.txtTDSc.TabIndex = 13
+        '
+        'txtIonicBalaceError
+        '
+        Me.txtIonicBalaceError.Location = New System.Drawing.Point(202, 29)
+        Me.txtIonicBalaceError.Name = "txtIonicBalaceError"
+        Me.txtIonicBalaceError.ReadOnly = True
+        Me.txtIonicBalaceError.Size = New System.Drawing.Size(140, 26)
+        Me.txtIonicBalaceError.TabIndex = 12
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(16, 184)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(150, 20)
+        Me.Label22.TabIndex = 26
+        Me.Label22.Text = "Osmotic Pressure"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(16, 146)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(80, 20)
+        Me.Label21.TabIndex = 25
+        Me.Label21.Text = "Alkalinity"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(16, 108)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(86, 20)
+        Me.Label20.TabIndex = 24
+        Me.Label20.Text = "Hardness"
+        '
+        'lblTDSc
+        '
+        Me.lblTDSc.AutoSize = True
+        Me.lblTDSc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTDSc.Location = New System.Drawing.Point(16, 70)
+        Me.lblTDSc.Name = "lblTDSc"
+        Me.lblTDSc.Size = New System.Drawing.Size(88, 20)
+        Me.lblTDSc.TabIndex = 23
+        Me.lblTDSc.Text = "TDS(calc)"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(16, 32)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(163, 20)
+        Me.Label2.TabIndex = 22
+        Me.Label2.Text = "Ionic Balance Error"
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
+        Me.ImageList1.ImageSize = New System.Drawing.Size(16, 16)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1558, 887)
+        Me.ClientSize = New System.Drawing.Size(1264, 491)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -661,7 +674,6 @@ Partial Class Form1
     Friend WithEvents lblTemperature As Label
     Friend WithEvents txtK As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextCa As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents lblunit6 As Label
@@ -699,4 +711,6 @@ Partial Class Form1
     Friend WithEvents Label23 As Label
     Friend WithEvents Label19 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents ImageList1 As ImageList
+    Friend WithEvents txtCa As TextBox
 End Class
