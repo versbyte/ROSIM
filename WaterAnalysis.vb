@@ -1,9 +1,31 @@
 ﻿Imports System.Diagnostics.Contracts
+Imports System.Diagnostics.Eventing.Reader
 Imports System.Drawing.Text
 Imports System.Security.Cryptography.X509Certificates
 
 Public Class WaterAnalysis
     Private Sub btnApply_Click(sender As Object, e As EventArgs) Handles btnEvaluate.Click
+
+
+        'Check if all the fields are not empty
+        Dim textBoxes As New List(Of TextBox) From {
+        txtTemperature, txtpH, txtSDI, txtTDSm, txtNa, txtMg, txtCa, txtK, txtCl, txtSO4, txtHCO3, txtCO3
+        }
+
+        ' Loop through all textboxes to find empty ones
+        For Each txt As TextBox In textBoxes
+            If String.IsNullOrWhiteSpace(txt.Text) Then
+                MessageBox.Show("Please fill out all required date before calculating!",
+                          "Missing Data",
+                          MessageBoxButtons.OK,
+                          MessageBoxIcon.Warning)
+                txt.Focus() ' Focus on the empty field
+                Return ' Stop here - don't execute rest of code
+            End If
+        Next
+
+
+
 
         '------Variables------
 
@@ -13,24 +35,29 @@ Public Class WaterAnalysis
         Dim dSDI As Double
         Dim dTDSm As Double
 
+
+
         'Cations
         Dim dNa As Double
-        dNa = Convert.ToDouble(txtNa.Text)
         Dim dMg As Double
-        dMg = Convert.ToDouble(txtMg.Text)
         Dim dCa As Double
-        dCa = Convert.ToDouble(txtCa.Text)
         Dim dK As Double
-        dK = Convert.ToDouble(txtK.Text)
+
 
         'Anions
         Dim dCl As Double
-        dCl = Convert.ToDouble(txtCl.Text)
         Dim dSO4 As Double
-        dSO4 = Convert.ToDouble(txtSO4.Text)
         Dim dHCO3 As Double
-        dHCO3 = Convert.ToDouble(txtHCO3.Text)
         Dim dCO3 As Double
+
+
+        dNa = Convert.ToDouble(txtNa.Text)
+        dMg = Convert.ToDouble(txtMg.Text)
+        dCa = Convert.ToDouble(txtCa.Text)
+        dK = Convert.ToDouble(txtK.Text)
+        dCl = Convert.ToDouble(txtCl.Text)
+        dSO4 = Convert.ToDouble(txtSO4.Text)
+        dHCO3 = Convert.ToDouble(txtHCO3.Text)
         dCO3 = Convert.ToDouble(txtCO3.Text)
 
         Dim LCmgl As New List(Of Double) From {dNa, dMg, dCa, dK,
