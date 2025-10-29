@@ -79,6 +79,7 @@ Partial Class WaterAnalysis
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.btnNext = New System.Windows.Forms.Button()
+        Me.bntSave = New System.Windows.Forms.Button()
         Me.gbData.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -647,12 +648,25 @@ Partial Class WaterAnalysis
         Me.btnNext.Text = "Next"
         Me.btnNext.UseVisualStyleBackColor = False
         '
+        'bntSave
+        '
+        Me.bntSave.BackColor = System.Drawing.SystemColors.Highlight
+        Me.bntSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bntSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.bntSave.Location = New System.Drawing.Point(245, 414)
+        Me.bntSave.Name = "bntSave"
+        Me.bntSave.Size = New System.Drawing.Size(102, 38)
+        Me.bntSave.TabIndex = 31
+        Me.bntSave.Text = "Save"
+        Me.bntSave.UseVisualStyleBackColor = False
+        '
         'WaterAnalysis
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1264, 491)
+        Me.Controls.Add(Me.bntSave)
         Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
@@ -734,4 +748,5 @@ Partial Class WaterAnalysis
     Friend WithEvents ImageList1 As ImageList
     Friend WithEvents txtCa As TextBox
     Friend WithEvents btnNext As Button
+    Friend WithEvents bntSave As Button
 End Class

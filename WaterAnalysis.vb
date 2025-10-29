@@ -1,9 +1,55 @@
 ﻿Imports System.Diagnostics.Contracts
 Imports System.Diagnostics.Eventing.Reader
 Imports System.Drawing.Text
+Imports System.IO
 Imports System.Security.Cryptography.X509Certificates
+Imports System.Xml.Serialization
 
 Public Class WaterAnalysis
+
+    Private currentProjectPath As String
+    Private currentProject As ProjectData
+    Private projectsDirectory As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ProjectDatas")
+
+    Public Sub LoadProject(filePath As String)
+        currentProjectPath = filePath
+
+        Try
+            Dim serializer As New XmlSerializer(GetType(ProjectData))
+            Using reader As New StreamReader(filePath)
+                currentProject = CType(serializer.Deserialize(reader), ProjectData)
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error loading project: " & ex.Message)
+            currentProject = New ProjectData()
+        End Try
+
+        ' Set form title with project name
+        Me.Text = "Water Analysis - " & currentProject.ProjectName
+
+        ' Load data into textboxes
+        LoadDataToUI()
+    End Sub
+
+    Private Sub LoadDataToUI()
+        txtTemperature.Text = If(currentProject.Temperature, "")
+        txtpH.Text = If(currentProject.FeedPH, "")
+        txtSDI.Text = If(currentProject.SDI15min, "")
+        txtTDSm.Text = If(currentProject.TDSm, "")
+        txtNa.Text = If(currentProject.Na, "")
+        txtMg.Text = If(currentProject.Mg, "")
+        txtCa.Text = If(currentProject.Ca, "")
+        txtK.Text = If(currentProject.K, "")
+        txtCl.Text = If(currentProject.Cl, "")
+        txtSO4.Text = If(currentProject.SO4, "")
+        txtHCO3.Text = If(currentProject.HCO3, "")
+        txtCO3.Text = If(currentProject.CO3, "")
+        txtIonicBalaceError.Text = If(currentProject.IonicBalanceError, "")
+        txtTDSc.Text = If(currentProject.TDSCalc, "")
+        txtHardness.Text = If(currentProject.Hardness, "")
+        txtAlkalinity.Text = If(currentProject.Alkalinity, "")
+        txtOsmoticPressure.Text = If(currentProject.OsmoticPressure, "")
+    End Sub
     Private Sub btnApply_Click(sender As Object, e As EventArgs) Handles btnEvaluate.Click
 
 
@@ -153,5 +199,40 @@ Public Class WaterAnalysis
 
         System_Configuration_Design.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub bntSave_Click(sender As Object, e As EventArgs) Handles bntSave.Click
+        Try
+            ' Update project data from textboxes
+            currentProject.Temperature = txtTemperature.Text
+            currentProject.FeedPH = txtpH.Text
+            currentProject.SDI15min = txtSDI.Text
+            currentProject.TDSm = txtTDSm.Text
+            currentProject.Na = txtNa.Text
+            currentProject.Mg = txtMg.Text
+            currentProject.Ca = txtCa.Text
+            currentProject.K = txtK.Text
+            currentProject.Cl = txtCl.Text
+            currentProject.SO4 = txtSO4.Text
+            currentProject.HCO3 = txtHCO3.Text
+            currentProject.CO3 = txtCO3.Text
+            currentProject.IonicBalanceError = txtIonicBalaceError.Text
+            currentProject.TDSCalc = txtTDSc.Text
+            currentProject.Hardness = txtHardness.Text
+            currentProject.Alkalinity = txtAlkalinity.Text
+            currentProject.OsmoticPressure = txtOsmoticPressure.Text
+            currentProject.LastModified = DateTime.Now
+
+            ' Save to file
+            Dim serializer As New XmlSerializer(GetType(ProjectData))
+            Using writer As New StreamWriter(currentProjectPath)
+                serializer.Serialize(writer, currentProject)
+            End Using
+
+            MessageBox.Show("Project saved successfully!", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        Catch ex As Exception
+            MessageBox.Show("Error saving project: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class
