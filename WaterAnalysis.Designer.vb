@@ -112,7 +112,7 @@ Partial Class WaterAnalysis
         Me.txtCa.Location = New System.Drawing.Point(104, 136)
         Me.txtCa.Name = "txtCa"
         Me.txtCa.Size = New System.Drawing.Size(140, 26)
-        Me.txtCa.TabIndex = 27
+        Me.txtCa.TabIndex = 6
         '
         'Label14
         '
@@ -293,7 +293,7 @@ Partial Class WaterAnalysis
         Me.btnEvaluate.Location = New System.Drawing.Point(29, 414)
         Me.btnEvaluate.Name = "btnEvaluate"
         Me.btnEvaluate.Size = New System.Drawing.Size(102, 38)
-        Me.btnEvaluate.TabIndex = 7
+        Me.btnEvaluate.TabIndex = 17
         Me.btnEvaluate.Text = "Evaluate"
         Me.btnEvaluate.UseVisualStyleBackColor = False
         '
@@ -644,19 +644,19 @@ Partial Class WaterAnalysis
         Me.btnNext.Location = New System.Drawing.Point(137, 414)
         Me.btnNext.Name = "btnNext"
         Me.btnNext.Size = New System.Drawing.Size(102, 38)
-        Me.btnNext.TabIndex = 30
+        Me.btnNext.TabIndex = 18
         Me.btnNext.Text = "Next"
         Me.btnNext.UseVisualStyleBackColor = False
         '
         'bntSave
         '
-        Me.bntSave.BackColor = System.Drawing.SystemColors.Highlight
+        Me.bntSave.BackColor = System.Drawing.Color.ForestGreen
         Me.bntSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bntSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.bntSave.Location = New System.Drawing.Point(245, 414)
         Me.bntSave.Name = "bntSave"
         Me.bntSave.Size = New System.Drawing.Size(102, 38)
-        Me.bntSave.TabIndex = 31
+        Me.bntSave.TabIndex = 19
         Me.bntSave.Text = "Save"
         Me.bntSave.UseVisualStyleBackColor = False
         '

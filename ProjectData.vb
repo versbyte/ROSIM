@@ -2,7 +2,7 @@
 Imports System.Xml.Serialization
 
 Public Class ProjectData
-
+    '---------Water Analysis Form---------
     Public Property ProjectName As String
     Public Property CreatedDate As DateTime
     Public Property LastModified As DateTime
@@ -31,6 +31,25 @@ Public Class ProjectData
     Public Property Hardness As String
     Public Property Alkalinity As String
     Public Property OsmoticPressure As String
+
+
+    '---------System Design---------
+    Public Property PermeateRecovery As String
+    Public Property Permeateflux As String
+    Public Property FeedFlowrate As String
+    Public Property ConcentrationFactor As String
+    Public Property SpecificFluxPerUnitArea As String
+    Public Property MembraneArea As String
+    Public Property ElementRecovery As String
+    Public Property AverageSystemFlux As String
+
+    Public Property NumberofSerial As String
+    Public Property NumberofElperVessel As String
+    Public Property NumberofStages As String
+    Public Property StagingRatio As String
+    Public Property TotalNumberOfElements As String
+
+
 
 
 End Class

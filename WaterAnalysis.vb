@@ -9,7 +9,7 @@ Public Class WaterAnalysis
 
     Private currentProjectPath As String
     Private currentProject As ProjectData
-    Private projectsDirectory As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ProjectDatas")
+
 
     Public Sub LoadProject(filePath As String)
         currentProjectPath = filePath
@@ -196,7 +196,6 @@ Public Class WaterAnalysis
     End Function
 
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
-
         System_Configuration_Design.Show()
         Me.Hide()
     End Sub
