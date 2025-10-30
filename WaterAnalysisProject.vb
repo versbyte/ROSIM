@@ -12,8 +12,8 @@
         Public Property SDI15min As String
         Public Property TDSm As String
 
-        ' Cations
-        Public Property Na As String
+    'Cations
+    Public Property Na As String
         Public Property Mg As String
         Public Property Ca As String
         Public Property K As String
