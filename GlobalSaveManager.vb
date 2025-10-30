@@ -81,6 +81,7 @@ Public Class GlobalSaveManager
         currentProject.FeedPH = form.txtpH.Text
         currentProject.SDI15min = form.txtSDI.Text
         currentProject.TDSm = form.txtTDSm.Text
+        currentProject.WaterType = form.cbWaterType.Text
         currentProject.Na = form.txtNa.Text
         currentProject.Mg = form.txtMg.Text
         currentProject.Ca = form.txtCa.Text
@@ -94,12 +95,14 @@ Public Class GlobalSaveManager
         currentProject.Hardness = form.txtHardness.Text
         currentProject.Alkalinity = form.txtAlkalinity.Text
         currentProject.OsmoticPressure = form.txtOsmoticPressure.Text
+        currentProject.WaterType = form.cbWaterType.Text
 
         ' Update app state
         appState.Temperature = form.txtTemperature.Text
         appState.FeedPH = form.txtpH.Text
         appState.SDI15min = form.txtSDI.Text
         appState.TDSm = form.txtTDSm.Text
+        appState.WaterType = form.cbWaterType.Text
         appState.Na = form.txtNa.Text
         appState.Mg = form.txtMg.Text
         appState.Ca = form.txtCa.Text
@@ -113,6 +116,7 @@ Public Class GlobalSaveManager
         appState.Hardness = form.txtHardness.Text
         appState.Alkalinity = form.txtAlkalinity.Text
         appState.OsmoticPressure = form.txtOsmoticPressure.Text
+        appState.WaterType = form.cbWaterType.Text
     End Sub
 
     Private Sub UpdateProjectFromSystemDesign(form As System_Configuration_Design)
@@ -126,10 +130,11 @@ Public Class GlobalSaveManager
         currentProject.ElementRecovery = form.txtElementRecovery.Text
         currentProject.AverageSystemFlux = form.txtAverageSystemFlux.Text
         currentProject.NumberofSerial = form.txtNumberOfSerial.Text
-        currentProject.NumberofElperVessel = form.txtNumberOfELPerVessel.Text
         currentProject.NumberofStages = form.txtNumberOfStages.Text
         currentProject.StagingRatio = form.txtStagingRatio.Text
         currentProject.TotalNumberOfElements = form.txtTotNumElements.Text
+        currentProject.NumberofVesselsStage1 = form.txtNofVessels1.Text
+        currentProject.NumberofVesselsStage2 = form.txtNofVessels2.Text
 
         ' Update app state
         appState.PermeateRecovery = form.txtPermeateRecovery.Text
@@ -141,10 +146,11 @@ Public Class GlobalSaveManager
         appState.ElementRecovery = form.txtElementRecovery.Text
         appState.AverageSystemFlux = form.txtAverageSystemFlux.Text
         appState.NumberofSerial = form.txtNumberOfSerial.Text
-        appState.NumberofElperVessel = form.txtNumberOfELPerVessel.Text
         appState.NumberofStages = form.txtNumberOfStages.Text
         appState.StagingRatio = form.txtStagingRatio.Text
         appState.TotalNumberOfElements = form.txtTotNumElements.Text
+        appState.NumberofVesselsStage1 = form.txtNofVessels1.Text
+        appState.NumberofVesselsStage2 = form.txtNofVessels2.Text
     End Sub
 
     Public Sub SetCurrentProject(filePath As String, project As WaterAnalysisProject)

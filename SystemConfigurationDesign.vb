@@ -6,6 +6,9 @@ Public Class System_Configuration_Design
     Private currentProject As WaterAnalysisProject
     Private appState As AppState
 
+    Public waterTypeCondition As String
+
+
     Public Sub LoadProject(filePath As String)
         currentProjectPath = filePath
         appState = AppStateManager.GetInstance().State
@@ -37,10 +40,12 @@ Public Class System_Configuration_Design
         txtElementRecovery.Text = If(currentProject.ElementRecovery, "")
         txtAverageSystemFlux.Text = If(currentProject.AverageSystemFlux, "")
         txtNumberOfSerial.Text = If(currentProject.NumberofSerial, "")
-        txtNumberOfELPerVessel.Text = If(currentProject.NumberofElperVessel, "")
         txtNumberOfStages.Text = If(currentProject.NumberofStages, "")
         txtStagingRatio.Text = If(currentProject.StagingRatio, "")
         txtTotNumElements.Text = If(currentProject.TotalNumberOfElements, "")
+        txtNofVessels1.Text = If(currentProject.NumberofVesselsStage1, "")
+        txtNofVessels2.Text = If(currentProject.NumberofVesselsStage2, "")
+
     End Sub
 
 
@@ -78,13 +83,17 @@ Public Class System_Configuration_Design
         Dim dElementRecovery As Double
         Dim dAverageSystemFlux As Double
 
+
+
         'Number of stages selection
-        Dim iNumberofSerial As Integer
-        Dim iNumberofElperVessel As Integer
-        Dim iNumberofStages As Integer
+        Dim iNumberofSerial As Double
+        Dim iNumberofStages As double
         Dim dStagingRatio As Double
         Dim iTotalNumberOfElements As Double
 
+
+        Dim dNumberofVesselsPerStage1 As Integer
+        Dim dNumberofVesselsPerStage2 As Integer
 
 
         'Calculations
@@ -99,18 +108,97 @@ Public Class System_Configuration_Design
         dConcentrationFactor = 1 / (1 - dPermeateRecovery)
         txtConcentrationFactor.Text = ConvAndRound(dConcentrationFactor)
 
+        'n serial value
+        If waterTypeCondition = "Brakisch Water" Then
+            If dPermeateRecovery >= 0 And dPermeateRecovery < 0.4 Then
+                iNumberofSerial = 6
+                iNumberofStages = 1
+                txtNumberOfSerial.Text = Convert.ToString(iNumberofSerial)
+                txtNumberOfStages.Text = Convert.ToString(iNumberofStages)
+            ElseIf dPermeateRecovery >= 0.4 And dPermeateRecovery <= 0.6 Then
+                iNumberofSerial = 6
+                iNumberofStages = 1
+                txtNumberOfSerial.Text = Convert.ToString(iNumberofSerial)
+                txtNumberOfStages.Text = Convert.ToString(iNumberofStages)
+            ElseIf dPermeateRecovery > 0.6 And dPermeateRecovery <= 0.8 Then
+                iNumberofSerial = 12
+                iNumberofStages = 2
+                txtNumberOfSerial.Text = Convert.ToString(iNumberofSerial)
+                txtNumberOfStages.Text = Convert.ToString(iNumberofStages)
+            ElseIf dPermeateRecovery > 0.8 And dPermeateRecovery <= 1 Then
+
+                iNumberofSerial = 18
+                iNumberofStages = 3
+                txtNumberOfSerial.Text = Convert.ToString(iNumberofSerial)
+                txtNumberOfStages.Text = Convert.ToString(iNumberofStages)
+            Else
+                MsgBox("Permeate recovery should be between 0 and 100%")
+            End If
+        End If
+
+        If waterTypeCondition = "Sea Water" Then
+            If dPermeateRecovery >= 0 And dPermeateRecovery < 0.4 Then
+                iNumberofSerial = 6
+                iNumberofStages = 1
 
 
+                txtNumberOfSerial.Text = Convert.ToString(iNumberofSerial)
+                txtNumberOfStages.Text = Convert.ToString(iNumberofStages)
+            ElseIf dPermeateRecovery >= 0.4 And dPermeateRecovery < 0.55 Then
+                iNumberofSerial = 8
+                iNumberofStages = 2
+
+                txtNumberOfSerial.Text = Convert.ToString(iNumberofSerial)
+                txtNumberOfStages.Text = Convert.ToString(iNumberofStages)
+            ElseIf dPermeateRecovery >= 0.55 And dPermeateRecovery <= 1 Then
+                iNumberofSerial = 14
+                iNumberofStages = 2
+
+
+                txtNumberOfSerial.Text = Convert.ToString(iNumberofSerial)
+                txtNumberOfStages.Text = Convert.ToString(iNumberofStages)
+            Else
+                MsgBox("Permeate recovery should be between 0 and 100%")
+            End If
+        End If
+
+
+        'Staging Ratio
+        dStagingRatio = Math.Pow((1 / (1 - dPermeateRecovery)), iNumberofStages)
+        txtStagingRatio.Text = ConvAndRound(dStagingRatio)
+
+        dSpecificFluxPerUnitArea = Convert.ToDouble(txtSpecificFluxPerUnitArea.Text) / 1000
+        dMembraneArea = Convert.ToDouble(txtMembraneArea.Text)
+        'Number of vessels per stage
+        If iNumberofStages = 1 Then
+            dNumberofVesselsPerStage1 = CType((dPermeateflux / (iNumberofSerial * dSpecificFluxPerUnitArea * dMembraneArea)), Integer)
+            dNumberofVesselsPerStage2 = 0
+            txtNofVessels1.Text = ConvAndRound(dNumberofVesselsPerStage1)
+            txtNofVessels2.Text = ConvAndRound(dNumberofVesselsPerStage2)
+        ElseIf iNumberofStages = 2 Then
+            dNumberofVesselsPerStage2 = CType((dPermeateflux / (iNumberofSerial * dSpecificFluxPerUnitArea * dMembraneArea)), Integer)
+            dNumberofVesselsPerStage1 = CType(dStagingRatio * dNumberofVesselsPerStage2, Integer)
+            txtNofVessels1.Text = ConvAndRound(dNumberofVesselsPerStage1)
+            txtNofVessels2.Text = ConvAndRound(dNumberofVesselsPerStage2)
+        End If
+
+        'total number of elements
+        iTotalNumberOfElements = (dNumberofVesselsPerStage1 + dNumberofVesselsPerStage2) * iNumberofSerial
+        txtTotNumElements.Text = Convert.ToString(iTotalNumberOfElements)
+
+        'element recovery
+        dElementRecovery = (1 - Math.Pow((1 - dPermeateRecovery), 1 / iNumberofSerial)) * 100
+        txtElementRecovery.Text = ConvAndRound(dElementRecovery)
+
+        'Average system flux
+        dAverageSystemFlux = (dPermeateflux / (dMembraneArea * iTotalNumberOfElements)) * 1000
+        txtAverageSystemFlux.Text = ConvAndRound(dAverageSystemFlux)
 
     End Sub
 
     Private Function ConvAndRound(variable As Double) As String
         Return Convert.ToString(Math.Round(variable, 2))
     End Function
-
-    Private Sub SystemConfigurationDesign_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
@@ -130,7 +218,8 @@ Public Class System_Configuration_Design
         AppStateManager.GetInstance().SaveAppState()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         GlobalSaveManager.GetInstance().SetCurrentProject(currentProjectPath, currentProject)
         GlobalSaveManager.GetInstance().SaveAllData()
     End Sub

@@ -80,6 +80,9 @@ Partial Class WaterAnalysis
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.btnNext = New System.Windows.Forms.Button()
         Me.bntSave = New System.Windows.Forms.Button()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.cbWaterType = New System.Windows.Forms.ComboBox()
         Me.gbData.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -290,7 +293,7 @@ Partial Class WaterAnalysis
         Me.btnEvaluate.BackColor = System.Drawing.SystemColors.Highlight
         Me.btnEvaluate.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEvaluate.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnEvaluate.Location = New System.Drawing.Point(29, 414)
+        Me.btnEvaluate.Location = New System.Drawing.Point(29, 666)
         Me.btnEvaluate.Name = "btnEvaluate"
         Me.btnEvaluate.Size = New System.Drawing.Size(102, 38)
         Me.btnEvaluate.TabIndex = 17
@@ -482,9 +485,9 @@ Partial Class WaterAnalysis
         Me.GroupBox3.Controls.Add(Me.Label20)
         Me.GroupBox3.Controls.Add(Me.lblTDSc)
         Me.GroupBox3.Controls.Add(Me.Label2)
-        Me.GroupBox3.Location = New System.Drawing.Point(695, 154)
+        Me.GroupBox3.Location = New System.Drawing.Point(29, 404)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(449, 244)
+        Me.GroupBox3.Size = New System.Drawing.Size(647, 244)
         Me.GroupBox3.TabIndex = 29
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Calculations"
@@ -641,7 +644,7 @@ Partial Class WaterAnalysis
         Me.btnNext.Enabled = False
         Me.btnNext.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNext.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnNext.Location = New System.Drawing.Point(137, 414)
+        Me.btnNext.Location = New System.Drawing.Point(137, 666)
         Me.btnNext.Name = "btnNext"
         Me.btnNext.Size = New System.Drawing.Size(102, 38)
         Me.btnNext.TabIndex = 18
@@ -663,12 +666,32 @@ Partial Class WaterAnalysis
         Me.bntSave.TabIndex = 19
         Me.bntSave.UseVisualStyleBackColor = False
         '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(1158, 86)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(86, 20)
+        Me.Label26.TabIndex = 31
+        Me.Label26.Text = "Water type"
+        '
+        'cbWaterType
+        '
+        Me.cbWaterType.FormattingEnabled = True
+        Me.cbWaterType.Items.AddRange(New Object() {"Brakisch Water", "Sea Water"})
+        Me.cbWaterType.Location = New System.Drawing.Point(1162, 109)
+        Me.cbWaterType.Name = "cbWaterType"
+        Me.cbWaterType.Size = New System.Drawing.Size(188, 28)
+        Me.cbWaterType.TabIndex = 32
+        '
         'WaterAnalysis
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1264, 491)
+        Me.ClientSize = New System.Drawing.Size(1478, 1444)
+        Me.Controls.Add(Me.cbWaterType)
+        Me.Controls.Add(Me.Label26)
         Me.Controls.Add(Me.bntSave)
         Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.GroupBox3)
@@ -676,11 +699,8 @@ Partial Class WaterAnalysis
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnEvaluate)
         Me.Controls.Add(Me.gbData)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(1286, 547)
-        Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(1286, 547)
+        Me.MaximumSize = New System.Drawing.Size(1500, 1500)
+        Me.MinimumSize = New System.Drawing.Size(1500, 1500)
         Me.Name = "WaterAnalysis"
         Me.Text = "Water Analysis"
         Me.gbData.ResumeLayout(False)
@@ -692,6 +712,7 @@ Partial Class WaterAnalysis
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -752,4 +773,7 @@ Partial Class WaterAnalysis
     Friend WithEvents txtCa As TextBox
     Friend WithEvents btnNext As Button
     Friend WithEvents bntSave As Button
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Label26 As Label
+    Friend WithEvents cbWaterType As ComboBox
 End Class

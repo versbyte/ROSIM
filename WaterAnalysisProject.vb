@@ -10,7 +10,8 @@
         Public Property Temperature As String
         Public Property FeedPH As String
         Public Property SDI15min As String
-        Public Property TDSm As String
+    Public Property TDSm As String
+    Public Property WaterType As String
 
     'Cations
     Public Property Na As String
@@ -40,9 +41,12 @@
         Public Property MembraneArea As String
         Public Property ElementRecovery As String
         Public Property AverageSystemFlux As String
-        Public Property NumberofSerial As String
-        Public Property NumberofElperVessel As String
-        Public Property NumberofStages As String
+    Public Property NumberofSerial As String
+    Public Property NumberofStages As String
         Public Property StagingRatio As String
-        Public Property TotalNumberOfElements As String
-    End Class
+    Public Property TotalNumberOfElements As String
+
+    Public Property NumberofVesselsStage1 As String
+
+    Public Property NumberofVesselsStage2 As String
+End Class

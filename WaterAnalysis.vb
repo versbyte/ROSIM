@@ -11,6 +11,7 @@ Public Class WaterAnalysis
     Private currentProject As WaterAnalysisProject
     Private appState As AppState
 
+    Public sWaterType As String
     Public Sub LoadProject(filePath As String)
         currentProjectPath = filePath
         appState = AppStateManager.GetInstance().State
@@ -47,6 +48,7 @@ Public Class WaterAnalysis
         txtHardness.Text = If(currentProject.Hardness, "")
         txtAlkalinity.Text = If(currentProject.Alkalinity, "")
         txtOsmoticPressure.Text = If(currentProject.OsmoticPressure, "")
+        cbWaterType.Text = If(currentProject.WaterType, "")
     End Sub
     Private Sub btnApply_Click(sender As Object, e As EventArgs) Handles btnEvaluate.Click
 
@@ -104,6 +106,9 @@ Public Class WaterAnalysis
         dHCO3 = Convert.ToDouble(txtHCO3.Text)
         dCO3 = Convert.ToDouble(txtCO3.Text)
 
+
+        sWaterType = cbWaterType.Text
+        System_Configuration_Design.waterTypeCondition = sWaterType
         Dim LCmgl As New List(Of Double) From {dNa, dMg, dCa, dK,
                                                 dCl, dSO4, dHCO3, dCO3} 'mg/l
 
@@ -119,6 +124,8 @@ Public Class WaterAnalysis
         Dim dHardness As Double
         Dim dAlkalinity As Double
         Dim dOsmoticPressure As Double
+
+
 
         'Molecular Weights
         Dim LMw As New List(Of Double) From {22.989, 24.305, 40.078, 39.098,
@@ -185,6 +192,11 @@ Public Class WaterAnalysis
         dOsmoticPressure = 1.12 * dTDSc * (273.15 + dTemperature) * 0.00001
         txtOsmoticPressure.Text = ConvAndRound(dOsmoticPressure)
 
+        'Water Type
+        sWaterType = cbWaterType.Text
+
+
+
         btnNext.Enabled = True
 
     End Sub
@@ -202,6 +214,8 @@ Public Class WaterAnalysis
         ' Save Water Analysis data first
         bntSave_Click(Nothing, Nothing)
 
+        GlobalSaveManager.GetInstance().SetCurrentProject(currentProjectPath, currentProject)
+        GlobalSaveManager.GetInstance().SaveAllData()
         ' Load System Design form with current project
         System_Configuration_Design.LoadProject(currentProjectPath)
         System_Configuration_Design.Show()

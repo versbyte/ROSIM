@@ -47,16 +47,17 @@ Partial Class System_Configuration_Design
         Me.txtPermeateFlux = New System.Windows.Forms.TextBox()
         Me.txtPermeateRecovery = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.txtNofVessels2 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtNofVessels1 = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.txtTotNumElements = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtStagingRatio = New System.Windows.Forms.TextBox()
         Me.txtNumberOfStages = New System.Windows.Forms.TextBox()
-        Me.txtNumberOfELPerVessel = New System.Windows.Forms.TextBox()
         Me.txtNumberOfSerial = New System.Windows.Forms.TextBox()
         Me.btnEvaluate = New System.Windows.Forms.Button()
         Me.btnBack = New System.Windows.Forms.Button()
@@ -137,9 +138,9 @@ Partial Class System_Configuration_Design
         Me.Label17.ForeColor = System.Drawing.SystemColors.AppWorkspace
         Me.Label17.Location = New System.Drawing.Point(467, 213)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(48, 20)
+        Me.Label17.Size = New System.Drawing.Size(37, 20)
         Me.Label17.TabIndex = 22
-        Me.Label17.Text = "l/m²h"
+        Me.Label17.Text = "lmh"
         '
         'Label19
         '
@@ -316,16 +317,17 @@ Partial Class System_Configuration_Design
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.Label18)
-        Me.GroupBox2.Controls.Add(Me.Label11)
+        Me.GroupBox2.Controls.Add(Me.Label22)
+        Me.GroupBox2.Controls.Add(Me.txtNofVessels2)
         Me.GroupBox2.Controls.Add(Me.Label5)
+        Me.GroupBox2.Controls.Add(Me.txtNofVessels1)
+        Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.txtTotNumElements)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.txtStagingRatio)
         Me.GroupBox2.Controls.Add(Me.txtNumberOfStages)
-        Me.GroupBox2.Controls.Add(Me.txtNumberOfELPerVessel)
         Me.GroupBox2.Controls.Add(Me.txtNumberOfSerial)
         Me.GroupBox2.Location = New System.Drawing.Point(645, 42)
         Me.GroupBox2.Name = "GroupBox2"
@@ -334,40 +336,55 @@ Partial Class System_Configuration_Design
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Number of stages selection"
         '
-        'Label18
+        'Label22
         '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Label18.Location = New System.Drawing.Point(485, 169)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(24, 20)
-        Me.Label18.TabIndex = 26
-        Me.Label18.Text = "%"
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(33, 248)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(190, 20)
+        Me.Label22.TabIndex = 30
+        Me.Label22.Text = "N of Vessels (Stage 2)"
         '
-        'Label11
+        'txtNofVessels2
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(33, 207)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(213, 20)
-        Me.Label11.TabIndex = 15
-        Me.Label11.Text = "Total number of elements"
+        Me.txtNofVessels2.Location = New System.Drawing.Point(292, 245)
+        Me.txtNofVessels2.Name = "txtNofVessels2"
+        Me.txtNofVessels2.ReadOnly = True
+        Me.txtNofVessels2.Size = New System.Drawing.Size(187, 26)
+        Me.txtNofVessels2.TabIndex = 29
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(33, 88)
+        Me.Label5.Location = New System.Drawing.Point(33, 210)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(166, 20)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Number of el/vessel"
+        Me.Label5.Size = New System.Drawing.Size(190, 20)
+        Me.Label5.TabIndex = 28
+        Me.Label5.Text = "N of Vessels (Stage 1)"
+        '
+        'txtNofVessels1
+        '
+        Me.txtNofVessels1.Location = New System.Drawing.Point(292, 207)
+        Me.txtNofVessels1.Name = "txtNofVessels1"
+        Me.txtNofVessels1.ReadOnly = True
+        Me.txtNofVessels1.Size = New System.Drawing.Size(187, 26)
+        Me.txtNofVessels1.TabIndex = 27
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(33, 171)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(213, 20)
+        Me.Label11.TabIndex = 15
+        Me.Label11.Text = "Total number of elements"
         '
         'txtTotNumElements
         '
-        Me.txtTotNumElements.Location = New System.Drawing.Point(292, 204)
+        Me.txtTotNumElements.Location = New System.Drawing.Point(292, 168)
         Me.txtTotNumElements.Name = "txtTotNumElements"
         Me.txtTotNumElements.ReadOnly = True
         Me.txtTotNumElements.Size = New System.Drawing.Size(187, 26)
@@ -377,7 +394,7 @@ Partial Class System_Configuration_Design
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(33, 166)
+        Me.Label6.Location = New System.Drawing.Point(33, 130)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(112, 20)
         Me.Label6.TabIndex = 8
@@ -387,7 +404,7 @@ Partial Class System_Configuration_Design
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(33, 127)
+        Me.Label7.Location = New System.Drawing.Point(33, 91)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(151, 20)
         Me.Label7.TabIndex = 7
@@ -405,7 +422,7 @@ Partial Class System_Configuration_Design
         '
         'txtStagingRatio
         '
-        Me.txtStagingRatio.Location = New System.Drawing.Point(292, 163)
+        Me.txtStagingRatio.Location = New System.Drawing.Point(292, 127)
         Me.txtStagingRatio.Name = "txtStagingRatio"
         Me.txtStagingRatio.ReadOnly = True
         Me.txtStagingRatio.Size = New System.Drawing.Size(187, 26)
@@ -413,19 +430,11 @@ Partial Class System_Configuration_Design
         '
         'txtNumberOfStages
         '
-        Me.txtNumberOfStages.Location = New System.Drawing.Point(292, 124)
+        Me.txtNumberOfStages.Location = New System.Drawing.Point(292, 88)
         Me.txtNumberOfStages.Name = "txtNumberOfStages"
         Me.txtNumberOfStages.ReadOnly = True
         Me.txtNumberOfStages.Size = New System.Drawing.Size(187, 26)
         Me.txtNumberOfStages.TabIndex = 10
-        '
-        'txtNumberOfELPerVessel
-        '
-        Me.txtNumberOfELPerVessel.Location = New System.Drawing.Point(292, 85)
-        Me.txtNumberOfELPerVessel.Name = "txtNumberOfELPerVessel"
-        Me.txtNumberOfELPerVessel.ReadOnly = True
-        Me.txtNumberOfELPerVessel.Size = New System.Drawing.Size(187, 26)
-        Me.txtNumberOfELPerVessel.TabIndex = 9
         '
         'txtNumberOfSerial
         '
@@ -505,13 +514,11 @@ Partial Class System_Configuration_Design
     Friend WithEvents txtConcentrationFactor As TextBox
     Friend WithEvents txtFeedFlowRate As TextBox
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents txtStagingRatio As TextBox
     Friend WithEvents txtNumberOfStages As TextBox
-    Friend WithEvents txtNumberOfELPerVessel As TextBox
     Friend WithEvents txtNumberOfSerial As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents txtAverageSystemFlux As TextBox
@@ -531,7 +538,10 @@ Partial Class System_Configuration_Design
     Friend WithEvents Label19 As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents Label21 As Label
-    Friend WithEvents Label18 As Label
     Friend WithEvents btnBack As Button
     Friend WithEvents btnSave As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtNofVessels1 As TextBox
+    Friend WithEvents Label22 As Label
+    Friend WithEvents txtNofVessels2 As TextBox
 End Class

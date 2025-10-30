@@ -117,7 +117,7 @@ Partial Class StartupWindow
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(504, 450)
+        Me.ClientSize = New System.Drawing.Size(524, 446)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnImport)
