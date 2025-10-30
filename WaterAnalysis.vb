@@ -8,30 +8,28 @@ Imports System.Xml.Serialization
 Public Class WaterAnalysis
 
     Private currentProjectPath As String
-    Private currentProject As ProjectData
-
+    Private currentProject As WaterAnalysisProject
+    Private appState As AppState
 
     Public Sub LoadProject(filePath As String)
         currentProjectPath = filePath
+        appState = AppStateManager.GetInstance().State
 
         Try
-            Dim serializer As New XmlSerializer(GetType(ProjectData))
+            Dim serializer As New XmlSerializer(GetType(WaterAnalysisProject))
             Using reader As New StreamReader(filePath)
-                currentProject = CType(serializer.Deserialize(reader), ProjectData)
+                currentProject = CType(serializer.Deserialize(reader), WaterAnalysisProject)
             End Using
         Catch ex As Exception
             MessageBox.Show("Error loading project: " & ex.Message)
-            currentProject = New ProjectData()
+            currentProject = New WaterAnalysisProject()
         End Try
 
-        ' Set form title with project name
         Me.Text = "Water Analysis - " & currentProject.ProjectName
-
-        ' Load data into textboxes
         LoadDataToUI()
     End Sub
 
-    Private Sub LoadDataToUI()
+    Public Sub LoadDataToUI()
         txtTemperature.Text = If(currentProject.Temperature, "")
         txtpH.Text = If(currentProject.FeedPH, "")
         txtSDI.Text = If(currentProject.SDI15min, "")
@@ -195,43 +193,22 @@ Public Class WaterAnalysis
         Return Convert.ToString(Math.Round(variable, 2))
     End Function
 
+    Private Sub bntSave_Click(sender As Object, e As EventArgs) Handles bntSave.Click
+        GlobalSaveManager.GetInstance().SetCurrentProject(currentProjectPath, currentProject)
+        GlobalSaveManager.GetInstance().SaveAllData()
+    End Sub
+
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
+        ' Save Water Analysis data first
+        bntSave_Click(Nothing, Nothing)
+
+        ' Load System Design form with current project
+        System_Configuration_Design.LoadProject(currentProjectPath)
         System_Configuration_Design.Show()
         Me.Hide()
     End Sub
 
-    Private Sub bntSave_Click(sender As Object, e As EventArgs) Handles bntSave.Click
-        Try
-            ' Update project data from textboxes
-            currentProject.Temperature = txtTemperature.Text
-            currentProject.FeedPH = txtpH.Text
-            currentProject.SDI15min = txtSDI.Text
-            currentProject.TDSm = txtTDSm.Text
-            currentProject.Na = txtNa.Text
-            currentProject.Mg = txtMg.Text
-            currentProject.Ca = txtCa.Text
-            currentProject.K = txtK.Text
-            currentProject.Cl = txtCl.Text
-            currentProject.SO4 = txtSO4.Text
-            currentProject.HCO3 = txtHCO3.Text
-            currentProject.CO3 = txtCO3.Text
-            currentProject.IonicBalanceError = txtIonicBalaceError.Text
-            currentProject.TDSCalc = txtTDSc.Text
-            currentProject.Hardness = txtHardness.Text
-            currentProject.Alkalinity = txtAlkalinity.Text
-            currentProject.OsmoticPressure = txtOsmoticPressure.Text
-            currentProject.LastModified = DateTime.Now
+    Private Sub WaterAnalysis_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-            ' Save to file
-            Dim serializer As New XmlSerializer(GetType(ProjectData))
-            Using writer As New StreamWriter(currentProjectPath)
-                serializer.Serialize(writer, currentProject)
-            End Using
-
-            MessageBox.Show("Project saved successfully!", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-        Catch ex As Exception
-            MessageBox.Show("Error saving project: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
     End Sub
 End Class

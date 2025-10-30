@@ -1,11 +1,12 @@
-﻿Imports System.IO
-Imports System.Xml.Serialization
+﻿Public Class AppState
 
-Public Class ProjectData
-    '---------Water Analysis Form---------
-    Public Property ProjectName As String
-    Public Property CreatedDate As DateTime
-    Public Property LastModified As DateTime
+    ' Startup Form Data
+    Public Property LastProjectsDirectory As String
+    Public Property RecentProjects As List(Of String)
+
+    ' Water Analysis Form Data
+    Public Property CurrentProjectPath As String
+    Public Property CurrentProjectName As String
 
     ' Physical Properties
     Public Property Temperature As String
@@ -32,8 +33,7 @@ Public Class ProjectData
     Public Property Alkalinity As String
     Public Property OsmoticPressure As String
 
-
-    '---------System Design---------
+    ' System Design
     Public Property PermeateRecovery As String
     Public Property Permeateflux As String
     Public Property FeedFlowrate As String
@@ -42,14 +42,19 @@ Public Class ProjectData
     Public Property MembraneArea As String
     Public Property ElementRecovery As String
     Public Property AverageSystemFlux As String
-
     Public Property NumberofSerial As String
     Public Property NumberofElperVessel As String
     Public Property NumberofStages As String
     Public Property StagingRatio As String
     Public Property TotalNumberOfElements As String
 
+    ' Window States
+    Public Property FormLocation As String ' Serialized Point
+    Public Property FormSize As String ' Serialized Size
 
+    Public Sub New()
+        RecentProjects = New List(Of String)()
+    End Sub
 
 
 End Class

@@ -2,24 +2,22 @@
 Imports System.Xml.Serialization
 
 Public Class System_Configuration_Design
-
     Private currentProjectPath As String
-    Private currentProject As ProjectData
-
-
-
+    Private currentProject As WaterAnalysisProject
+    Private appState As AppState
 
     Public Sub LoadProject(filePath As String)
         currentProjectPath = filePath
+        appState = AppStateManager.GetInstance().State
 
         Try
-            Dim serializer As New XmlSerializer(GetType(ProjectData))
+            Dim serializer As New XmlSerializer(GetType(WaterAnalysisProject))
             Using reader As New StreamReader(filePath)
-                currentProject = CType(serializer.Deserialize(reader), ProjectData)
+                currentProject = CType(serializer.Deserialize(reader), WaterAnalysisProject)
             End Using
         Catch ex As Exception
             MessageBox.Show("Error loading project: " & ex.Message)
-            currentProject = New ProjectData()
+            currentProject = New WaterAnalysisProject()
         End Try
 
         ' Set form title with project name
@@ -28,6 +26,7 @@ Public Class System_Configuration_Design
         ' Load data into textboxes
         LoadDataToUI()
     End Sub
+
     Private Sub LoadDataToUI()
         txtPermeateRecovery.Text = If(currentProject.PermeateRecovery, "")
         txtPermeateFlux.Text = If(currentProject.Permeateflux, "")
@@ -43,7 +42,6 @@ Public Class System_Configuration_Design
         txtStagingRatio.Text = If(currentProject.StagingRatio, "")
         txtTotNumElements.Text = If(currentProject.TotalNumberOfElements, "")
     End Sub
-
 
 
     Private Sub btnEvaluate_Click(sender As Object, e As EventArgs) Handles btnEvaluate.Click
@@ -110,7 +108,30 @@ Public Class System_Configuration_Design
         Return Convert.ToString(Math.Round(variable, 2))
     End Function
 
+    Private Sub SystemConfigurationDesign_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+
+    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+
+        GlobalSaveManager.GetInstance().SetCurrentProject(currentProjectPath, currentProject)
+        GlobalSaveManager.GetInstance().SaveAllData()
+        WaterAnalysis.LoadProject(currentProjectPath)
+        WaterAnalysis.Show()
+        Me.Hide()
+
+    End Sub
 
 
 
+    Private Sub System_Configuration_Design_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        ' Save app state on form close
+        AppStateManager.GetInstance().SaveAppState()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        GlobalSaveManager.GetInstance().SetCurrentProject(currentProjectPath, currentProject)
+        GlobalSaveManager.GetInstance().SaveAllData()
+    End Sub
 End Class

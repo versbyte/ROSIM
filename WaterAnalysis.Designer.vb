@@ -650,14 +650,17 @@ Partial Class WaterAnalysis
         '
         'bntSave
         '
-        Me.bntSave.BackColor = System.Drawing.Color.ForestGreen
+        Me.bntSave.BackColor = System.Drawing.Color.Transparent
+        Me.bntSave.BackgroundImage = Global.ROSIM.My.Resources.Resources.save
+        Me.bntSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.bntSave.FlatAppearance.BorderSize = 0
+        Me.bntSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.bntSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bntSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.bntSave.Location = New System.Drawing.Point(245, 414)
+        Me.bntSave.Location = New System.Drawing.Point(1220, 12)
         Me.bntSave.Name = "bntSave"
-        Me.bntSave.Size = New System.Drawing.Size(102, 38)
+        Me.bntSave.Size = New System.Drawing.Size(32, 29)
         Me.bntSave.TabIndex = 19
-        Me.bntSave.Text = "Save"
         Me.bntSave.UseVisualStyleBackColor = False
         '
         'WaterAnalysis

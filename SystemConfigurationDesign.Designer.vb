@@ -23,6 +23,13 @@ Partial Class System_Configuration_Design
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.txtAverageSystemFlux = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -40,6 +47,7 @@ Partial Class System_Configuration_Design
         Me.txtPermeateFlux = New System.Windows.Forms.TextBox()
         Me.txtPermeateRecovery = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtTotNumElements = New System.Windows.Forms.TextBox()
@@ -51,15 +59,8 @@ Partial Class System_Configuration_Design
         Me.txtNumberOfELPerVessel = New System.Windows.Forms.TextBox()
         Me.txtNumberOfSerial = New System.Windows.Forms.TextBox()
         Me.btnEvaluate = New System.Windows.Forms.Button()
-        Me.bntSave = New System.Windows.Forms.Button()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
+        Me.btnBack = New System.Windows.Forms.Button()
+        Me.btnSave = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -95,6 +96,83 @@ Partial Class System_Configuration_Design
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Global information"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Label14.Location = New System.Drawing.Point(467, 337)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(48, 20)
+        Me.Label14.TabIndex = 25
+        Me.Label14.Text = "l/m²h"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Label15.Location = New System.Drawing.Point(467, 295)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(24, 20)
+        Me.Label15.TabIndex = 24
+        Me.Label15.Text = "%"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Label16.Location = New System.Drawing.Point(467, 254)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(29, 20)
+        Me.Label16.TabIndex = 23
+        Me.Label16.Text = "m²"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Label17.Location = New System.Drawing.Point(467, 213)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(48, 20)
+        Me.Label17.TabIndex = 22
+        Me.Label17.Text = "l/m²h"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Label19.Location = New System.Drawing.Point(467, 130)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(48, 20)
+        Me.Label19.TabIndex = 20
+        Me.Label19.Text = "m3/h"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Label20.Location = New System.Drawing.Point(467, 91)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(48, 20)
+        Me.Label20.TabIndex = 19
+        Me.Label20.Text = "m3/h"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.ForeColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Label21.Location = New System.Drawing.Point(467, 52)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(24, 20)
+        Me.Label21.TabIndex = 18
+        Me.Label21.Text = "%"
         '
         'Label13
         '
@@ -256,6 +334,17 @@ Partial Class System_Configuration_Design
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Number of stages selection"
         '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.ForeColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Label18.Location = New System.Drawing.Point(485, 169)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(24, 20)
+        Me.Label18.TabIndex = 26
+        Me.Label18.Text = "%"
+        '
         'Label11
         '
         Me.Label11.AutoSize = True
@@ -358,113 +447,41 @@ Partial Class System_Configuration_Design
         Me.btnEvaluate.Text = "Evaluate"
         Me.btnEvaluate.UseVisualStyleBackColor = False
         '
-        'bntSave
+        'btnBack
         '
-        Me.bntSave.BackColor = System.Drawing.Color.ForestGreen
-        Me.bntSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bntSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.bntSave.Location = New System.Drawing.Point(136, 464)
-        Me.bntSave.Name = "bntSave"
-        Me.bntSave.Size = New System.Drawing.Size(102, 38)
-        Me.bntSave.TabIndex = 20
-        Me.bntSave.Text = "Save"
-        Me.bntSave.UseVisualStyleBackColor = False
+        Me.btnBack.BackColor = System.Drawing.Color.Gray
+        Me.btnBack.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBack.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnBack.Location = New System.Drawing.Point(136, 464)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(102, 38)
+        Me.btnBack.TabIndex = 21
+        Me.btnBack.Text = "Back"
+        Me.btnBack.UseVisualStyleBackColor = False
         '
-        'Label14
+        'btnSave
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Label14.Location = New System.Drawing.Point(467, 337)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(48, 20)
-        Me.Label14.TabIndex = 25
-        Me.Label14.Text = "l/m²h"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Label15.Location = New System.Drawing.Point(467, 295)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(24, 20)
-        Me.Label15.TabIndex = 24
-        Me.Label15.Text = "%"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Label16.Location = New System.Drawing.Point(467, 254)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(29, 20)
-        Me.Label16.TabIndex = 23
-        Me.Label16.Text = "m²"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Label17.Location = New System.Drawing.Point(467, 213)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(48, 20)
-        Me.Label17.TabIndex = 22
-        Me.Label17.Text = "l/m²h"
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Label19.Location = New System.Drawing.Point(467, 130)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(48, 20)
-        Me.Label19.TabIndex = 20
-        Me.Label19.Text = "m3/h"
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Label20.Location = New System.Drawing.Point(467, 91)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(48, 20)
-        Me.Label20.TabIndex = 19
-        Me.Label20.Text = "m3/h"
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Label21.Location = New System.Drawing.Point(467, 52)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(24, 20)
-        Me.Label21.TabIndex = 18
-        Me.Label21.Text = "%"
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Label18.Location = New System.Drawing.Point(485, 169)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(24, 20)
-        Me.Label18.TabIndex = 26
-        Me.Label18.Text = "%"
+        Me.btnSave.BackColor = System.Drawing.Color.Transparent
+        Me.btnSave.BackgroundImage = Global.ROSIM.My.Resources.Resources.save
+        Me.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnSave.FlatAppearance.BorderSize = 0
+        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnSave.Location = New System.Drawing.Point(1280, 12)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(32, 29)
+        Me.btnSave.TabIndex = 22
+        Me.btnSave.UseVisualStyleBackColor = False
         '
         'System_Configuration_Design
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1385, 536)
-        Me.Controls.Add(Me.bntSave)
+        Me.ClientSize = New System.Drawing.Size(1330, 536)
+        Me.Controls.Add(Me.btnSave)
+        Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnEvaluate)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -507,7 +524,6 @@ Partial Class System_Configuration_Design
     Friend WithEvents Label11 As Label
     Friend WithEvents txtTotNumElements As TextBox
     Friend WithEvents btnEvaluate As Button
-    Friend WithEvents bntSave As Button
     Friend WithEvents Label14 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Label16 As Label
@@ -516,4 +532,6 @@ Partial Class System_Configuration_Design
     Friend WithEvents Label20 As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents Label18 As Label
+    Friend WithEvents btnBack As Button
+    Friend WithEvents btnSave As Button
 End Class

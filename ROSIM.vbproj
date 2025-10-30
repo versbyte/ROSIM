@@ -73,7 +73,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProjectData.vb" />
+    <Compile Include="AppState.vb" />
+    <Compile Include="AppStateManager.vb" />
+    <Compile Include="GlobalSaveManager.vb" />
     <Compile Include="StartupWindow.Designer.vb">
       <DependentUpon>StartupWindow.vb</DependentUpon>
     </Compile>
@@ -109,6 +111,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="WaterAnalysisProject.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="StartupWindow.resx">
@@ -139,8 +142,9 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Include="Resources\save1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
